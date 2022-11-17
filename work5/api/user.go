@@ -8,8 +8,9 @@ import (
 )
 
 func register(c *gin.Context) {
+	//表单验证
 	if err := c.ShouldBind(&model.User{}); err != nil {
-		c.JSON(http.StatusOK, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  500,
 			"message": "验证失败",
 		})
@@ -33,8 +34,9 @@ func register(c *gin.Context) {
 	})
 }
 func login(c *gin.Context) {
+	//表单验证
 	if err := c.ShouldBind(&model.User{}); err != nil {
-		c.JSON(http.StatusOK, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  500,
 			"message": "验证失败",
 		})

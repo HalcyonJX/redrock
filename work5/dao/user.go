@@ -44,12 +44,6 @@ func Store(m map[string]string) {
 	writer := bufio.NewWriter(file)
 	writer.WriteString(string(marshal)) //将数据先写入缓存
 	writer.Flush()                      //将缓存中的内容写入文件
-	content, err1 := ioutil.ReadFile("./user.data")
-	if err1 != nil {
-		fmt.Println("read file failed, err:", err1)
-		return
-	}
-	json.Unmarshal(content, &database)
 }
 
 // 读文件
