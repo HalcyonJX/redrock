@@ -13,7 +13,7 @@ var com model.Comments
 
 // 连接数据库
 func InitDB() (err error) {
-	dsn := "root:Zjx666946.@tcp(127.0.0.1:3306)/mysql_demo?charset=utf8mb4&parseTime=True"
+	dsn := "user:password@tcp(127.0.0.1:3306)/mysql_demo?charset=utf8mb4&parseTime=True"
 	db, err = sql.Open("mysql", dsn)
 	if err != nil {
 		return err
